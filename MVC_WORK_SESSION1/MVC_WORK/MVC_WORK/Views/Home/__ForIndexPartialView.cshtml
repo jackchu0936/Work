@@ -1,0 +1,36 @@
+﻿
+@model IEnumerable<MVC_WORK.Models.AccountingDataViewModel>
+    @{ 
+        int Page = Convert.ToInt32(ViewData["Page"]);
+        int Size = Convert.ToInt32(ViewData["Size"]);
+        int i = 0;
+    }
+<div class="container">
+    <table class="table table-bordered">
+        <tr>
+            <td>
+                編號
+            </td>
+            <td>
+                類別
+            </td>
+            <td>
+                日期
+            </td>
+            <td>
+                金額
+            </td>
+        </tr>
+        @foreach (var item in Model)
+        {  
+            i = (i + 1) + (Page - 1) * Size;
+            <tr>
+                <td>@i</td>
+                <td>@Html.DisplayFor(modelItem => item.TYPE) </td>
+                <td>@Html.DisplayFor(modelItem => item.DATE) </td>
+                <td>@Html.DisplayFor(modelItem => item.MONEY)</td>
+
+            </tr>
+        }
+    </table>
+</div>
