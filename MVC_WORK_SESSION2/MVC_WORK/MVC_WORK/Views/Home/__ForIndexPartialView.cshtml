@@ -1,0 +1,36 @@
+﻿
+@model  MVC_WORK.ViewModel.AccountBookViewModels
+    @{ 
+        int Page = Convert.ToInt32(ViewData["Page"]);
+        int Size = Convert.ToInt32(ViewData["Size"]);
+        int i = 0;
+    }
+<div class="container">
+    <table class="table table-bordered">
+        <tr>
+            <td>
+                編號
+            </td>
+            <td>
+                類別
+            </td>
+            <td>
+                日期
+            </td>
+            <td>
+                金額
+            </td>
+        </tr>
+        @foreach (var item in Model.AccountBookData)
+        {  
+            i = (i + 1) + (Page - 1) * Size;
+            <tr>
+                <td>@i</td>
+                <td>@Html.DisplayFor(modelItem => item.CategoryName) </td>
+                <td>@Html.DisplayFor(modelItem => item.Dateee) </td>
+                <td>@Html.DisplayFor(modelItem => item.Amounttt)</td>
+
+            </tr>
+        }
+    </table>
+</div>
