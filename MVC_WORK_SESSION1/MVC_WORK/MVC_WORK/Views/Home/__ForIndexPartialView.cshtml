@@ -1,5 +1,5 @@
 ﻿
-@model IEnumerable<MVC_WORK.Models.AccountingDataViewModel>
+@model IEnumerable<MVC_WORK.ViewModel.AccountingDataViewModel>
     @{ 
         int Page = Convert.ToInt32(ViewData["Page"]);
         int Size = Convert.ToInt32(ViewData["Size"]);
@@ -26,7 +26,7 @@
             i = (i + 1) + (Page - 1) * Size;
             <tr>
                 <td>@i</td>
-                <td>@Html.DisplayFor(modelItem => item.TYPE) </td>
+                <td>@Html.DisplayFor(modelItem => item.AccountTYPE) </td>
                 <td>@Html.DisplayFor(modelItem => item.DATE) </td>
                 <td>@Html.DisplayFor(modelItem => item.MONEY)</td>
 

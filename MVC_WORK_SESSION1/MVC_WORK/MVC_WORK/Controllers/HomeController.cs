@@ -4,6 +4,7 @@ using System.Data;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using MVC_WORK.ViewModel;
 
 namespace MVC_WORK.Controllers
 {
@@ -12,10 +13,10 @@ namespace MVC_WORK.Controllers
         public ActionResult Index()
         {
             
-            List <Models.AccountingDataViewModel> AccountData = new List<Models.AccountingDataViewModel>();
-            AccountData.Add(new Models.AccountingDataViewModel { DATE = "106/06/01", MONEY = "1000", TYPE = "支出" });
-            AccountData.Add(new Models.AccountingDataViewModel { DATE = "106/06/03", MONEY = "1500", TYPE = "支出" });
-            AccountData.Add(new Models.AccountingDataViewModel { DATE = "106/06/13", MONEY = "500", TYPE = "支出" });
+            List <ViewModel.AccountingDataViewModel> AccountData = new List<ViewModel.AccountingDataViewModel>();
+            AccountData.Add(new ViewModel.AccountingDataViewModel { DATE = "106/06/01", MONEY = "1000", AccountTYPE = "支出" });
+            AccountData.Add(new ViewModel.AccountingDataViewModel { DATE = "106/06/03", MONEY = "1500", AccountTYPE = "支出" });
+            AccountData.Add(new ViewModel.AccountingDataViewModel { DATE = "106/06/13", MONEY = "500", AccountTYPE = "支出" });
 
             ViewData["ViewDataTest"] = AccountData;
             ViewData["Page"] = "1";
