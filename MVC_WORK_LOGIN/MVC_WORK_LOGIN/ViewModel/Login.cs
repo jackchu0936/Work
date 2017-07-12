@@ -10,12 +10,9 @@ namespace MVC_WORK_LOGIN.ViewModel
     public class Login
     {
         [DisplayName("帳號")]
-        [Required]
-        [DataType(DataType.EmailAddress)]
-        [RegularExpression(@"\w.+\@\w.+", ErrorMessage = "帳號 欄位 不是正確的EMAIL格式")]
+        [RegularExpression(@"\w.+\@\w.+")]
         public string LOGIN_ID { get; set; }
         [DisplayName("密碼")]
-        [Required]
         [StringLength(20,MinimumLength =4)]
         public string PASSWORD { get; set; }
     }
