@@ -3,9 +3,10 @@
     ViewBag.Title = "登入";
 }
 
-@Html.AntiForgeryToken()
+
 @using (Html.BeginForm())
 {
+    @Html.AntiForgeryToken()
     <div class="form-horizontal">
         <hr />
         @Html.ValidationSummary(true)
