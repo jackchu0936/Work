@@ -21,6 +21,7 @@ namespace MVC_WORK_LOGIN.Controllers
         {
             if (ModelState.IsValid)
             {
+                TempData["message"] = "登入成功";
                 return View();
             }
 
